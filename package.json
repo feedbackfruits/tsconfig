@@ -1,0 +1,13 @@
+{
+  "name": "@feedbackfruits/tsconfig",
+  "version": "1.0.0",
+  "description": "Shared tsconfig for all Node.js/Typescript-based projects",
+  "main": "tsconfig.json",
+  "license": "UNLICENSED",
+  "files": [
+    "tsconfig.json"
+  ],
+  "devDependencies": {
+    "typescript": "4.9.3"
+  }
+}
