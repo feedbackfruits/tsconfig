@@ -2,7 +2,7 @@
   "name": "@feedbackfruits/tsconfig",
   "description": "Shared tsconfig for all Node.js/Typescript-based projects",
   "author": "FeedbackFruits <media@feedbackfruits.com>",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "tsconfig.json",
   "license": "MIT",
   "files": [
@@ -14,6 +14,10 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/feedbackfruits/tsconfig.git"
   },
   "engines": {
     "node": "24.*"
