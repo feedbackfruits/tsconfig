@@ -5,16 +5,26 @@ on:
     branches:
       - main
 
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
+
+env:
+  NODE_VERSION: '22'
+
 jobs:
   release:
     name: Release (GH)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Enable Corepack
+        run: corepack enable
+      - uses: actions/setup-node@v6
         with:
           registry-url: https://npm.pkg.github.com
-          node-version: '14'
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -22,11 +32,13 @@ jobs:
     name: Release (NPM)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v6
+      - name: Enable Corepack
+        run: corepack enable
+      - uses: actions/setup-node@v6
         with:
           registry-url: https://registry.npmjs.org
-          node-version: '14'
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
       - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+

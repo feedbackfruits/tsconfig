@@ -1,6 +1,6 @@
 {
   "name": "@feedbackfruits/tsconfig",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Shared tsconfig for all Node.js/Typescript-based projects",
   "main": "tsconfig.json",
   "license": "UNLICENSED",
@@ -8,10 +8,14 @@
     "tsconfig.json"
   ],
   "devDependencies": {
-    "typescript": "4.9.3"
+    "typescript": "6.0.3"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  }
+  },
+  "engines": {
+    "node": "22.*"
+  },
+  "packageManager": "pnpm@11.0.1+sha512.ddb1f0a53fb56603ed96b018dbcff83ff1c5fb510c9f97c2aef19af51c776c8d90c67e12c223c34db792b75634700e15419cb87341ba4947a2fc151822fbdcf2"
 }
