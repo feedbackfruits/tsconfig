@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "Shared tsconfig for all Node.js/Typescript-based projects",
   "main": "tsconfig.json",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "files": [
     "tsconfig.json"
   ],
@@ -11,8 +11,7 @@
     "typescript": "6.0.3"
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "access": "public"
   },
   "engines": {
     "node": "22.*"
