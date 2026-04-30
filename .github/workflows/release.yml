@@ -6,8 +6,9 @@ on:
       - main
 
 permissions:
-  id-token: write  # Required for OIDC
-  contents: read
+  id-token: write
+  contents: write
+  packages: write
 
 env:
   NODE_VERSION: '22'
@@ -25,8 +26,8 @@ jobs:
           registry-url: https://npm.pkg.github.com
           node-version: ${{ env.NODE_VERSION }}
           cache: 'pnpm'
-      - name: Install latest npm
-        run: npm install npm@latest
+      - name: Install dependencies
+        run: pnpm install
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -42,6 +43,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           node-version: ${{ env.NODE_VERSION }}
           cache: 'pnpm'
-      - name: Install latest npm
-        run: npm install npm@latest
+      - name: Install dependencies
+        run: pnpm install
       - run: npm publish
